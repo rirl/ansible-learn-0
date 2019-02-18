@@ -1,0 +1,26 @@
+---
+- name: "Do a demo"
+  hosts: groupA
+
+  tasks:
+    - name: demo task 1
+      debug:
+        msg: "this is task 1"
+
+    - name: demo task 2
+      fail:
+        msg: "this is task 2"
+      when: inventory_hostname == "host2"
+
+- name: "Do another demo"
+  hosts: groupB
+  serial: 1
+
+  tasks:
+    - name: demo task 3
+      debug:
+        msg: "this is task 3"
+  
+    - name: demo task 4
+      debug:
+        msg: "this is task 4"
