@@ -1,0 +1,28 @@
+---
+- name: configure web app
+  hosts: web
+  vars:
+    repo: myrepo.com/repo.git
+    version: 8
+
+  tasks:
+    - name: install nginx
+      debug:
+        msg: "dnf install nginx"
+
+    - name: ensure web directory
+      debug:
+        msg: "mkdir /webapp"
+
+    - name: get content
+      debug:
+        msg: "git clone --branch {{ version }} {{ repo }} /webapp"
+
+    - name: nginx config
+      debug:
+        msg: "put nginx config in place"
+
+    - name: ensure nginx running
+      debug:
+        msg: "service nginx startt "
+
