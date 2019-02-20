@@ -21,8 +21,14 @@
     - name: nginx config
       debug:
         msg: "put nginx config in place"
+      notify: restart nginx
+      changed_when: True
 
     - name: ensure nginx running
       debug:
-        msg: "service nginx startt "
+        msg: "service nginx start "
 
+  handlers:
+    - name: restart nginx
+      debug:
+        msg: "service restart nginx"
