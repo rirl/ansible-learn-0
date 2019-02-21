@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# RiRL -- Cut-and-paste from here...
+set -x
+ansible -i webapp web -m dnf -a "name=libselinux-python state=present" -f 1 -b
+ansible -i webapp web -m copy -a "src=critfile dest=/tmp/critfile" -f 1 
+set +x 
