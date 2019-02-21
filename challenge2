@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -x
+ansible -i hosts localhost -m command -a "uname -r"
+set +x
