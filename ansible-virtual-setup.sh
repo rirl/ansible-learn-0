@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+# Fedora 29
 sudo dnf install python-virtualenv
 sudo dnf install gcc openssl-devel
 
