@@ -3,7 +3,7 @@
 sudo dnf install python-virtualenv
 sudo dnf install gcc openssl-devel
 
-virutalenv ~/ansible
+virtualenv ~/ansible
 pip install ansible
 which pip
 
